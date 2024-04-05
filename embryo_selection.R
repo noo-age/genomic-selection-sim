@@ -86,7 +86,7 @@ plot_expected_score_3d <- function(n_values, r, prob_viable, num_trials, num_rou
         mean_score <- mean(scores, na.rm = TRUE)
       }
       
-      # Save the final mean score
+      # Save the final mean score, dividing by 2 to account for SD of embryos being half of population SD
       avg_scores[i, j] <- mean_score / 2
     }
   }
@@ -97,7 +97,6 @@ plot_expected_score_3d <- function(n_values, r, prob_viable, num_trials, num_rou
 }
 
 # Test the function
-
 n_values <- seq(100, 300, by = 10)
 num_rounds_values <- 1:100
 plot_expected_score_3d(n_values, r = r, prob_viable = prob_viable, num_trials = num_trials, num_rounds_values = num_rounds_values)
